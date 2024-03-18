@@ -1,0 +1,188 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         id="WebApp_ID" version="3.0">
+  <display-name>Archetype Created Web Application</display-name>
+
+<filter>
+  <filter-name>noCacheFilter</filter-name>
+  <filter-class>com.lvbank.Filter.NoCacheFilter</filter-class>
+</filter>
+
+<filter-mapping>
+<filter-name>noCacheFilter</filter-name>
+<url-pattern>/*</url-pattern>
+</filter-mapping>
+
+  <filter>
+    <filter-name>loginFilter</filter-name>
+    <filter-class>com.lvbank.Filter.LoginFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>loginFilter</filter-name>
+    <url-pattern>/JSP/*</url-pattern>
+  </filter-mapping>
+
+
+
+
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.lvbank.Controller.profile.entry.LoginUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/JSP/profile/entry/Login</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>com.lvbank.Controller.profile.entry.LogoutUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/Logout</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>SignupServlet</servlet-name>
+    <servlet-class>com.lvbank.Controller.profile.entry.SignUpServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SignupServlet</servlet-name>
+    <url-pattern>/JSP/profile/entry/Signup</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>SignupEmployeeServlet</servlet-name>
+    <servlet-class>com.lvbank.Controller.branch.BranchIdServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SignupEmployeeServlet</servlet-name>
+    <url-pattern>/JSP/addEmployee</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>BranchAddServlet</servlet-name>
+    <servlet-class>com.lvbank.Controller.branch.BranchRegisterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BranchAddServlet</servlet-name>
+    <url-pattern>/JSP/branch/RegisterBranch</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AddCardMaster</servlet-name>
+    <servlet-class>com.lvbank.Controller.card.CardMasterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddCardMaster</servlet-name>
+    <url-pattern>/JSP/card/AddCardMaster</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>BranchCustomerIdServlet</servlet-name>
+    <servlet-class>com.lvbank.Controller.profile.CustomerIdServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BranchCustomerIdServlet</servlet-name>
+    <url-pattern>/JSP/createAccount</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>CreateAccountServlet</servlet-name>
+    <servlet-class>com.lvbank.Controller.account.CreateAccountServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CreateAccountServlet</servlet-name>
+    <url-pattern>/JSP/createNewAccount</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>CardMasterId</servlet-name>
+    <servlet-class>com.lvbank.Controller.card.CardMasterIdServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CardMasterId</servlet-name>
+    <url-pattern>/JSP/registerCard</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>CardRegister</servlet-name>
+    <servlet-class>com.lvbank.Controller.card.CardServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CardRegister</servlet-name>
+    <url-pattern>/JSP/registerNewCard</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>transferAmount</servlet-name>
+    <servlet-class>com.lvbank.Controller.transaction.TransferServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>transferAmount</servlet-name>
+    <url-pattern>/JSP/payment/Transfer</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>LoanRegistration</servlet-name>
+    <servlet-class>com.lvbank.Controller.account.AddLoanServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoanRegistration</servlet-name>
+    <url-pattern>/JSP/account/AddLoan</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>BranchCustomerUpdate</servlet-name>
+    <servlet-class>com.lvbank.Controller.profile.CustomerIdServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BranchCustomerUpdate</servlet-name>
+    <url-pattern>/JSP/updateBranch</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AccountIdServlet</servlet-name>
+    <servlet-class>com.lvbank.Controller.profile.AccountIdServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AccountIdServlet</servlet-name>
+    <url-pattern>/JSP/AccountId</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>DeactivateEmployee</servlet-name>
+    <servlet-class>com.lvbank.Controller.profile.EmployeeIdServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeactivateEmployee</servlet-name>
+    <url-pattern>/JSP/dropEmployee</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>DropEmployee</servlet-name>
+    <servlet-class>com.lvbank.Controller.profile.DropEmployeeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DropEmployee</servlet-name>
+    <url-pattern>/JSP/deactivateEmployee</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>BranchUpdateServlet</servlet-name>
+    <servlet-class>com.lvbank.Controller.branch.BranchUpdateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BranchUpdateServlet</servlet-name>
+    <url-pattern>/JSP/doUpdateBranch</url-pattern>
+  </servlet-mapping>
+
+
+
+</web-app>
